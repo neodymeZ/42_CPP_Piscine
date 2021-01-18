@@ -6,7 +6,7 @@
 /*   By: larosale <larosale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 21:47:39 by larosale          #+#    #+#             */
-/*   Updated: 2021/01/16 03:42:20 by larosale         ###   ########.fr       */
+/*   Updated: 2021/01/16 17:05:55 by larosale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 #include <iostream>
 #include "Fixed.hpp"
 
-int main()
-{
+int main() {
+    
     Fixed a;
     Fixed const b( 10 );
     Fixed const c( 42.42f );
