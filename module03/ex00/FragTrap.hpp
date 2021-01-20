@@ -6,7 +6,7 @@
 /*   By: larosale <larosale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:00:59 by larosale          #+#    #+#             */
-/*   Updated: 2021/01/17 15:29:30 by larosale         ###   ########.fr       */
+/*   Updated: 2021/01/19 00:21:12 by larosale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ public:
 
     FragTrap &operator=(const FragTrap &rhs);
 
-    std::string getName() const;
-    unsigned int getLevel() const;
-    unsigned int getHP() const;
-    unsigned int getEP() const;
-
     void rangedAttack(const std::string &target) const;
     void meleeAttack(const std::string &target) const;
     void takeDamage(unsigned int amount);
@@ -41,14 +36,14 @@ public:
 private:
 
     unsigned int _hitPoints;
-    const unsigned int _maxHitPoints;
+    unsigned int _maxHitPoints;
     unsigned int _energyPoints;
-    const unsigned int _maxEnergyPoints;
+    unsigned int _maxEnergyPoints;
     unsigned int _level;
     std::string _name;
-    const unsigned int _meleeAttackDamage;
-    const unsigned int _rangedAttackDamage;
-    const unsigned int _armorDamageReduction;
+    unsigned int _meleeAttackDamage;
+    unsigned int _rangedAttackDamage;
+    unsigned int _armorDamageReduction;
 
 };
 

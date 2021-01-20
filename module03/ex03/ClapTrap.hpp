@@ -6,7 +6,7 @@
 /*   By: larosale <larosale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:00:59 by larosale          #+#    #+#             */
-/*   Updated: 2021/01/18 00:12:31 by larosale         ###   ########.fr       */
+/*   Updated: 2021/01/19 00:39:58 by larosale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,9 @@ public:
     ClapTrap(const ClapTrap &src);
     ~ClapTrap();
 
-    ClapTrap &operator=(const ClapTrap &rhs);
+    const std::string &getName() const;
 
-    std::string getName() const;
-    unsigned int getLevel() const;
-    unsigned int getHP() const;
-    unsigned int getEP() const;
+    ClapTrap &operator=(const ClapTrap &rhs);
 
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
@@ -45,12 +42,12 @@ protected:
     unsigned int _energyPoints;
     unsigned int _level;
     std::string _name;
-    const unsigned int _maxHitPoints;
-    const unsigned int _maxEnergyPoints;
-    const std::string _type;
-    const unsigned int _meleeAttackDamage;
-    const unsigned int _rangedAttackDamage;
-    const unsigned int _armorDamageReduction;
+    unsigned int _maxHitPoints;
+    unsigned int _maxEnergyPoints;
+    std::string _type;
+    unsigned int _meleeAttackDamage;
+    unsigned int _rangedAttackDamage;
+    unsigned int _armorDamageReduction;
 
 };
 

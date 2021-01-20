@@ -6,7 +6,7 @@
 /*   By: larosale <larosale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:01:03 by larosale          #+#    #+#             */
-/*   Updated: 2021/01/18 00:35:46 by larosale         ###   ########.fr       */
+/*   Updated: 2021/01/19 00:33:42 by larosale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ FragTrap::FragTrap(const std::string &name) :
     return;
 }
 
-FragTrap::FragTrap(const FragTrap &src) :
-    ClapTrap(src._type, src._maxEnergyPoints,
-        src._maxHitPoints, src._meleeAttackDamage,
-        src._rangedAttackDamage, src._armorDamageReduction) {
+FragTrap::FragTrap(const FragTrap &src) {
 
     *this = src;
 
@@ -62,10 +59,15 @@ FragTrap &FragTrap::operator=(const FragTrap &rhs) {
 
     if (this != &rhs)
     {
-        this->_name = rhs.getName();
-        this->_level = rhs.getLevel();
-        this->_hitPoints = rhs.getHP();
-        this->_energyPoints = rhs.getEP();
+        this->_hitPoints = rhs._hitPoints;
+        this->_maxHitPoints = rhs._maxHitPoints;
+        this->_energyPoints = rhs._energyPoints;
+        this->_maxEnergyPoints = rhs._maxEnergyPoints;
+        this->_level = rhs._level;
+        this->_name = rhs._name;
+        this->_meleeAttackDamage = rhs._meleeAttackDamage;
+        this->_rangedAttackDamage = rhs._rangedAttackDamage;
+        this->_armorDamageReduction = rhs._armorDamageReduction;
     }
 
     return *this;

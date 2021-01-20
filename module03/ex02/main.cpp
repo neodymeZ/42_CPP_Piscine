@@ -6,11 +6,11 @@
 /*   By: larosale <larosale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 18:33:44 by larosale          #+#    #+#             */
-/*   Updated: 2021/01/18 00:41:02 by larosale         ###   ########.fr       */
+/*   Updated: 2021/01/19 01:59:02 by larosale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// clang++ ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp -Wall -Wextra -Werror -std=c++98
+// clang++ -Wall -Wextra -Werror -std=c++98 *.cpp
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"

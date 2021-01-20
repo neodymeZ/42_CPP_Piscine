@@ -6,7 +6,7 @@
 /*   By: larosale <larosale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:01:03 by larosale          #+#    #+#             */
-/*   Updated: 2021/01/18 00:08:08 by larosale         ###   ########.fr       */
+/*   Updated: 2021/01/19 00:28:41 by larosale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,7 @@ ScavTrap::ScavTrap(const std::string &name) :
     return;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src) :
-    _maxHitPoints(src._maxHitPoints),
-    _maxEnergyPoints(src._maxEnergyPoints),
-    _type(src._type),
-    _meleeAttackDamage(src._meleeAttackDamage),
-    _rangedAttackDamage(src._rangedAttackDamage),
-    _armorDamageReduction(src._armorDamageReduction) {
+ScavTrap::ScavTrap(const ScavTrap &src) {
 
     *this = src;
 
@@ -82,33 +76,18 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
 
     if (this != &rhs)
     {
-        this->_name = rhs.getName();
-        this->_level = rhs.getLevel();
-        this->_hitPoints = rhs.getHP();
-        this->_energyPoints = rhs.getEP();
+        this->_hitPoints = rhs._hitPoints;
+        this->_maxHitPoints = rhs._maxHitPoints;
+        this->_energyPoints = rhs._energyPoints;
+        this->_maxEnergyPoints = rhs._maxEnergyPoints;
+        this->_level = rhs._level;
+        this->_name = rhs._name;
+        this->_meleeAttackDamage = rhs._meleeAttackDamage;
+        this->_rangedAttackDamage = rhs._rangedAttackDamage;
+        this->_armorDamageReduction = rhs._armorDamageReduction;
     }
 
     return *this;
-}
-
-std::string ScavTrap::getName() const {
-
-    return this->_name;
-}
-
-unsigned int ScavTrap::getLevel() const {
-
-    return this->_level;
-}
-
-unsigned int ScavTrap::getHP() const {
-
-    return this->_hitPoints;
-}
-
-unsigned int ScavTrap::getEP() const {
-
-    return this->_energyPoints;
 }
 
 void ScavTrap::rangedAttack(const std::string &target) const {
@@ -134,13 +113,13 @@ void ScavTrap::takeDamage(unsigned int amount) {
     unsigned int damage = 0;
     if (amount > this->_armorDamageReduction)
     {
-        if (amount - this->_armorDamageReduction > this->_hitPoints)
+        if (amount - this->_armorDamageReduction >= this->_hitPoints)
         {
             damage = this->_hitPoints;
         }
         else
         {
-            damage = amount;
+            damage = amount - this->_armorDamageReduction;
         }
     }
 
