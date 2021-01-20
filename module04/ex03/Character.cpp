@@ -6,7 +6,7 @@
 /*   By: larosale <larosale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 15:01:03 by larosale          #+#    #+#             */
-/*   Updated: 2021/01/21 01:53:34 by larosale         ###   ########.fr       */
+/*   Updated: 2021/01/21 02:20:25 by larosale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,19 @@ void Character::use(int idx, ICharacter &target) {
 
     ((this->_inventory)[idx])->use(target);
 
+/*
+    std::cout << "Usage statistics:" << std::endl;
+    for (int i = 0; i < MAX_INV; i++)
+    {
+        if ((this->_inventory)[i] != NULL)
+        {
+            std::cout << "Type: ";
+            std::cout << ((this->_inventory)[i])->getType();
+            std::cout << ", XP: ";
+            std::cout << ((this->_inventory)[i])->getXP();
+            std::cout << std::endl;
+        }
+    }
+*/
     return;
 }
